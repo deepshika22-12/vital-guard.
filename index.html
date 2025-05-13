@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VitalGuard - Health Risk Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background elements -->
+  <div class="gradient-bg"></div>
+  <div class="pulse-ring"></div>
+  <div id="particles-js"></div>
+
+  <!-- Main container -->
+  <div class="container">
+    <h1>🩺 VitalGuard</h1>
+    <p class="tagline">Analyze Your Vitals in Real-Time</p>
+
+    <div class="form">
+      <label>Heart Rate (bpm): <input type="number" id="hr" /></label>
+      <label>Blood Pressure (e.g. 120/80): <input type="text" id="bp" /></label>
+      <label>Oxygen Saturation (%): <input type="number" id="spo2" /></label>
+      <label>Temperature (°C): <input type="number" id="temp" /></label>
+      <button onclick="analyzeVitals()">Analyze Risk</button>
+    </div>
+
+    <div class="result" id="resultBox">
+      <h3>Your Health Status:</h3>
+      <p id="riskMessage">Enter your vitals to check status</p>
+    </div>
+
+    <h3>Vitals Log</h3>
+    <table id="vitalsTable">
+      <thead>
+        <tr>
+          <th>Heart Rate</th>
+          <th>Blood Pressure</th>
+          <th>SpO₂</th>
+          <th>Temperature</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <canvas id="historyChart"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
